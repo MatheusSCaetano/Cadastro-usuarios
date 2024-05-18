@@ -1,0 +1,25 @@
+    {% extends 'usuarios/base.html' %}
+    {% block conteudo %}
+    <div class="conteiner">
+        <h1>Usuarios Cadastrados</h1>
+        <table class="table table-bordered table-striped">
+            <tr>
+
+                <th>id</th>
+                <th>nome</th>
+                <th>idade</th>
+
+            </tr>
+            {% for usuario in usuarios %}
+            <!--esse for in sera pra buscar cada dado individualmente dentro do dicionario -> buncando o usuarios.id, depois usuarios.nome e assim por diante-->
+            <tr>
+                <td>{{usuario.id_usuario}}</td> <!-- buscando o dado dentro do dicionario usuarios criado la em views-->
+                <td>{{usuario.nome}}</td>
+                <td>{{usuario.idade}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+    </div>
+        {% endblock %}
+
